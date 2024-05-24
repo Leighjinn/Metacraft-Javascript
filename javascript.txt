@@ -1,0 +1,32 @@
+let numberofRagnaToken = [];
+
+function mintRagnaToken(tokenType, tokenValue, tokenQuantity) {
+    let newNFT = {
+        tokenType: tokenType,
+        tokenValue: tokenValue,
+        tokenQuantity: tokenQuantity
+    };
+    numberofRagnaToken.push(newNFT);
+}
+
+function listRagnaTokens() {
+    numberofRagnaToken.forEach((nft, index) => {
+        console.log(`RagnaToken ${index + 1}:`);
+        console.log(`Type of Token: ${nft.tokenType}`);
+        console.log(`Value of Token: ${nft.tokenValue}`);
+        console.log(`Quantity of Token: ${nft.tokenQuantity}`);
+        console.log("------------------------------");
+    });
+}
+
+function getTotalRagnaToken() {
+    console.log(`Total number of NFTs minted: ${numberofRagnaToken.length}`);
+}
+
+mintRagnaToken("Platinum", "$100", "10");
+mintRagnaToken("Gold", "$80", "5");
+mintRagnaToken("Silver", "$60", "7");
+mintRagnaToken("Copper", "$40", "3");
+
+listRagnaTokens();
+getTotalRagnaToken();
